@@ -188,35 +188,45 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&kp ESC    &kp Q         &kp W         &kp E            &kp R                &kp T                     &kp Y                   &kp U          &kp I            &kp O           &kp P                       &mt EQUAL MINUS
-&kp TAB    &kp A         &kp S         &kp D            &kp F                &kp G                     &kp H                   &kp J          &kp K            &kp L           &mt2 LBKT LEFT_PARENTHESIS  &mt2 RBKT RIGHT_PARENTHESIS
-&kp LSHFT  &kp Z         &kp X         &kp C            &kp V                &kp B                     &kp N                   &kp M          &mt SEMI COMMA   &mt SQT PERIOD  &mt2 UP SLASH               &mt BACKSLASH AT_SIGN
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE        &mo SECONDARY_LAYER  &lt TERTIARY_LAYER LANG2  &lt SYSTEM_LAYER LANG1  &kp BACKSPACE  &kp RET          &kp LEFT        &kp DOWN                    &kp RIGHT
-                         &allow_end    &allow_pagedown  &allow_home          &allow_pageup             &allow_pageup           &allow_home    &allow_pagedown  &allow_end
+&kp ESC    &kp Q         &kp W         &kp E            &kp R        &kp T          &kp Y          &kp U          &kp I            &kp O       &kp P          &kp AT_SIGN
+&kp TAB    &kp A         &kp S         &kp D            &kp F        &kp G          &kp H          &kp J          &kp K            &kp L       &kp SEMICOLON  &kp COLON
+&kp LSHFT  &kp Z         &kp X         &kp C            &kp V        &kp B          &kp N          &kp M          &kp COMMA        &kp PERIOD  &kp SLASH      &kp UNDERSCORE
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE      &mo 1        &lt 3 LANG2    &lt 3 LANG1    &kp BACKSPACE  &lt 4 ENTER      &kp LEFT    &kp DOWN       &kp RIGHT
+                         &allow_end    &allow_pagedown  &allow_home  &allow_pageup  &allow_pageup  &allow_home    &allow_pagedown  &allow_end
             >;
         };
 
-        SECONDARY_LAYER {
+        NUM {
             display-name = "secondary_layer";
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp PAGE_UP    &kp PRINTSCREEN  &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
-&trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp HOME       &kp END          &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
-&trans     &trans        &trans        &trans        &trans        &trans        &kp PAGE_DOWN  &kp KP_MINUS     &kp KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
-&trans     &trans        &trans        &trans        &trans        &kp CAPS      &trans         &kp BACKSPACE    &trans           &kp KP_NUMBER_0  &dot_comma       &kp KP_ENTER
-                         &trans        &trans        &trans        &trans        &trans         &trans           &trans           &trans
+&trans          &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp PAGE_UP    &kp NUMBER_7   &kp NUMBER_8  &kp NUMBER_9  &kp PLUS      &kp MINUS
+&trans          &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp HOME       &kp NUMBER_4   &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp SLASH
+&trans          &kp F1  &kp F2   &kp F3   &kp F4   &trans    &kp PAGE_DOWN  &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &kp COLON
+&kp LEFT_SHIFT  &trans  &trans   &trans   &trans   &kp CAPS  &trans         &kp BACKSPACE  &kp NUMBER_0  &trans        &trans        &kp RIGHT_SHIFT
+                        &trans   &trans   &trans   &trans    &trans         &trans         &trans        &trans
             >;
         };
 
-        TERTIARY_LAYER {
+        SYMBOL {
             display-name = "tertiary_layer";
             bindings = <
-&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans   &trans   &trans   &trans   &trans  &trans  &trans  &trans
+&trans  &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH   &kp DOLLAR  &kp PERCENT  &kp SQT      &kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE        &trans
+&trans  &kp BACKSLASH    &kp PLUS           &kp MINUS  &kp EQUAL   &kp SLASH    &kp AT_SIGN  &kp LEFT_BRACKET   &kp RIGHT_BRACKET     &kp LEFT_BRACE         &kp RIGHT_BRACE  &trans
+&trans  &trans           &trans             &trans     &trans      &trans       &kp PIPE     &kp SEMICOLON      &kp COLON             &kp QUESTION           &kp UNDERSCORE   &trans
+&trans  &trans           &trans             &trans     &trans      &trans       &trans       &kp COMMA          &kp PERIOD            &trans                 &trans           &trans
+                         &trans             &trans     &trans      &trans       &trans       &trans             &trans                &trans
+            >;
+        };
+
+        ARROW {
+            bindings = <
+&trans          &kp ESCAPE  &mkp MB4                &kp UP_ARROW    &mkp MB5                 &trans   &kp RG(LEFT_ARROW)          &kp RA(LEFT_ARROW)      &kp UP_ARROW    &kp RA(RIGHT_ARROW)      &kp RG(RIGHT_ARROW)          &trans
+&trans          &kp HOME    &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &kp RC(RS(TAB))             &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp RC(TAB)                  &trans
+&kp LEFT_SHIFT  &trans      &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &kp RA(RG(RC(LEFT_ARROW)))  &kp RA(RG(LEFT_ARROW))  &kp RA(RG(F))   &kp RG(RA(RIGHT_ARROW))  &kp RA(RC(RG(RIGHT_ARROW)))  &trans
+&trans          &trans      &trans                  &trans          &trans                   &trans   &trans                      &trans                  &kp BACKSPACE   &trans                   &trans                       &trans
+                            &trans                  &trans          &trans                   &trans   &trans                      &trans                  &trans          &trans
             >;
         };
 
@@ -236,11 +246,11 @@
         MOUSE_R_LAYER {
             display-name = "mouse_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo SCROLL_R_LAYER
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4   &mkp MB5   &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo 6   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &mkp MB4   &mkp MB5   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans
             >;
         };
 
@@ -258,11 +268,11 @@
         MOUSE_L_LAYER {
             display-name = "mouse_l_layer";
             bindings = <
-&trans              &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&mo SCROLL_L_LAYER  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans              &trans     &mkp MB5   &mkp MB4   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans              &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                               &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mo 8   &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mkp MB5   &mkp MB4   &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans
             >;
         };
 
